@@ -1,27 +1,29 @@
-var txtInput = document.querySelector("#txt-input");
-var btnTranslate = document.querySelector("#btn-translate");
-var outputText = document.querySelector("#output");
+var input = document.querySelector("#txt-input");
+var btn = document.querySelector("#btn-translate");
+var output = document.querySelector("#output");
 
 var serverUrl = "https://api.funtranslations.com/translate/pirate.json"
 
-function getTranslationUrl(input) {
-    return serverUrl + "?" + "text=" + input
-}
-
 function errorHandler(error) {
-    console.log("error occured", error);
-    alert("Something's wrong! Try again after sometime.")
+    console.log("error❌", error);
+    alert("Something's wrong! Try again later.")
 }
 
-function clickHandler() {
-    var inputText = txtInput.value;
-    fetch(getTranslationUrl(inputText))
-        .then(response => response.json())
+function convertText() {
+    var inputText = input.value;
+    if(inputText=""){
+        alert("Please enter some text");
+        return;
+    }
+       
+    const url = `${serverUrl}?text=${inputText}`;
+    fetch(url)
+        .then(res => res.json())
         .then(json => {
-            var translatedText = json.contents.translated;
-            outputDiv.innertext = translatedText;
+            var outputText = json.contents.translated
+            output.innertext = outputText;
         })
         .catch(errorHandler)
 }
 
-btnTranslate.addEventListener("click", clickHandler);
+btn.addEventListener("click", convertText);
