@@ -20,7 +20,7 @@ function convertText() {
     fetch(url)
         .then(res => res.json())
         .then(json => {
-            var outputText = json.contents.translated
+            var outputText = json.contents.translated;
             output.innertext = outputText;
         })
         .catch(errorHandler)
