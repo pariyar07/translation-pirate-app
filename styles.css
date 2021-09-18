@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Beastly&display=swap');
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
 #heading{
     text-align: center;
-    background: brown;
     color: white;
     padding: 10px;
     margin: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
+    font-family: 'Permanent Marker', cursive;
+    }
 
 .heading-2{
     text-align: center;
@@ -38,19 +43,21 @@
         margin-top: 1rem;
         width: 150px;
         height: 50px;
-        background: brown;
-        color: white;
+        background: white;
+        color: blue;
         border-radius: 40px;
         font-size: larger;
 }
 
+#info{
+    color: white;
+}
+
 #footer{
-    background: brown;
     color: white;
     padding: 10px;
     margin: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    margin: auto;
 }
 
 #heading-footer{
@@ -59,6 +66,7 @@
 
 #footer-para{
     text-align: center;
+    font-size: larger;
 }
 
 #info{
